@@ -69,8 +69,81 @@ cartButtons.forEach(button => {
         let productName = product.querySelector("h3").innerText;
 
 
-        alert(
-            productName + " berhasil ditambahkan ke keranjang 🛒"
+        // ======================================
+// SHOPPING CART SYSTEM
+// ======================================
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+const cartCount = document.getElementById("cart-count");
+
+
+function updateCartCount(){
+
+    if(cartCount){
+
+        cartCount.innerText = cart.length;
+
+    }
+
+}
+
+
+updateCartCount();
+
+
+
+const cartButtons = document.querySelectorAll(".cart-btn");
+
+
+cartButtons.forEach(button=>{
+
+
+    button.addEventListener("click",()=>{
+
+
+        const product = button.closest(".product-card");
+
+
+        const productName = product.querySelector("h3").innerText;
+
+
+        const productPrice = product.querySelector(".price").innerText;
+
+
+        const item = {
+
+            name: productName,
+
+            price: productPrice
+
+        };
+
+
+        cart.push(item);
+
+
+        localStorage.setItem(
+
+            "cart",
+
+            JSON.stringify(cart)
+
+        );
+
+
+        updateCartCount();
+
+
+        alert(productName + " masuk keranjang 🛒");
+
+
+    });
+
+
+});
         );
 
     });
