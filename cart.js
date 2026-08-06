@@ -37,7 +37,7 @@ function displayCart(){
         `;
 
 
-        totalPrice.innerText = "Total: Rp0";
+        totalPrice.innerHTML = "Total: Rp0";
 
         return;
 
@@ -49,10 +49,7 @@ function displayCart(){
 
 
         let priceNumber = Number(
-
-            item.price
-            .replace(/[^0-9]/g,'')
-
+            item.price.replace(/[^0-9]/g,'')
         );
 
 
@@ -90,9 +87,20 @@ function displayCart(){
 
 
 
-    totalPrice.innerText = 
-
+    totalPrice.innerHTML = 
     "Total: Rp" + total.toLocaleString("id-ID");
+
+
+
+    cartItems.innerHTML += `
+
+    <a href="checkout.html" class="btn">
+
+        Checkout
+
+    </a>
+
+    `;
 
 
 }
