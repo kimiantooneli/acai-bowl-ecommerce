@@ -1,3 +1,4 @@
+
 /* =========================================
    GOOGLE FONTS
 ========================================= */
@@ -999,5 +1000,82 @@ body.dark-mode footer{
 .login-card button:hover{
 
     background:#815ed8;
+
+}
+/* WELCOME PAGE */
+
+.welcome-page{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #d8c7ff,
+        #f8eaff
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.login-card{
+
+    background:white;
+
+    padding:40px;
+
+    width:350px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+.login-card h1{
+
+    color:#9b7bea;
+
+}
+
+
+.login-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border-radius:20px;
+
+    border:1px solid #ddd;
+
+}
+
+
+.login-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#9b7bea;
+
+    color:white;
+
+    cursor:pointer;
 
 }
