@@ -1,112 +1,26 @@
-/* =========================================
-   WELCOME LOGIN PAGE
-========================================= */
+const loginForm = document.getElementById("welcome-login");
+
+loginForm.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    let username = document.getElementById("username").value;
+
+    let password = document.getElementById("password").value;
 
 
-.welcome-page{
+    if(username !== "" && password !== ""){
 
-    min-height:100vh;
+        localStorage.setItem("login","true");
 
-    background:linear-gradient(
-        135deg,
-        #d8c7ff,
-        #f3eaff
-    );
+        localStorage.setItem("username", username);
 
-    display:flex;
+        window.location.href="index.html";
 
-    justify-content:center;
+    }else{
 
-    align-items:center;
+        alert("Isi username dan password dulu!");
 
-}
+    }
 
-
-
-.login-card{
-
-    background:white;
-
-    width:380px;
-
-    max-width:90%;
-
-    padding:40px;
-
-    border-radius:30px;
-
-    text-align:center;
-
-    box-shadow:0 15px 40px rgba(120,80,180,.15);
-
-}
-
-
-
-.login-card h1{
-
-    color:#8b5cf6;
-
-    font-size:35px;
-
-    margin-bottom:10px;
-
-}
-
-
-
-.login-card p{
-
-    color:#777;
-
-    margin-bottom:25px;
-
-}
-
-
-
-.login-card input{
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    border-radius:15px;
-
-    border:1px solid #dfd0ff;
-
-    outline:none;
-
-}
-
-
-
-.login-card button{
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:20px;
-
-    background:#9b7bea;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-}
-
-
-
-.login-card button:hover{
-
-    background:#815ed8;
-
-}
+});
