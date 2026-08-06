@@ -428,3 +428,26 @@ scrollAnimation();
     font-weight:600;
 
 }
+// ======================================
+// ACCOUNT NAVBAR
+// ======================================
+
+
+const accountName = document.getElementById("account-name");
+
+
+let userLogin = localStorage.getItem("login");
+
+let userData = JSON.parse(
+    localStorage.getItem("user")
+);
+
+
+
+if(accountName && userLogin === "true" && userData){
+
+
+    accountName.innerText = userData.name;
+
+
+}
