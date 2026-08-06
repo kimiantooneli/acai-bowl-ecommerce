@@ -1,40 +1,80 @@
-const loginForm = document.getElementById("welcome-login");
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Acai Bowl</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
 
 
-loginForm.addEventListener("submit",(e)=>{
-
-    e.preventDefault();
+<body>
 
 
-    let username = document.getElementById("username").value;
-
-    let password = document.getElementById("password").value;
+<section class="welcome-page">
 
 
-    if(username !== "" && password !== ""){
+<div class="login-card">
 
 
-        localStorage.setItem(
-            "login",
-            "true"
-        );
+<h1>
+🍓 Acai Bowl
+</h1>
 
 
-        localStorage.setItem(
-            "username",
-            username
-        );
+<p>
+Fresh • Healthy • Sweet
+</p>
 
 
-        window.location.href="index.html";
+<form id="welcome-login">
 
 
-    }else{
+<input 
+type="text"
+id="username"
+placeholder="Username"
+required>
 
 
-        alert("Isi username dan password dulu!");
+<input 
+type="password"
+id="password"
+placeholder="Password"
+required>
 
-    }
+
+<button type="submit">
+Login
+</button>
 
 
-});
+</form>
+
+
+<p>
+Belum punya akun?
+<a href="register.html">
+Daftar
+</a>
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<script src="js/welcome.js"></script>
+
+
+</body>
+
+</html>
